@@ -13,6 +13,7 @@
     "husky": "^7.0.0"
   },
   "scripts": {
-    "build:esbuild": "npx esbuild src/Hypercube.ts --bundle --minify --sourcemap --target=\"chrome58,firefox57,safari11,edge29\" --outfile=\"./dist/out.js\""
+    "build:esbuild": "npx esbuild src/Hypercube.ts --bundle --minify --sourcemap --target=\"chrome58,firefox57,safari11,edge29\" --outfile=\"./dist/out.js\"",
+    "test": "npx -p typescript tsc"
   }
 }
