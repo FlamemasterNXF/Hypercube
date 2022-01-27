@@ -3,9 +3,9 @@ export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
-        squares: [D(1), D(1)],
+        cubes: [D(2), D(0)],
         minerals: [D(0)],
-        miners: [D(0)],
+        miners: [D(1)],
         //misc
         time: <number>Date.now(),
         devSpeed: <number>1,
@@ -17,12 +17,13 @@ function defaultTempVars() {
     return {
         squaresGen: D(0),
         mineralsGen: D(0),
-        powerGen: D(0),
+        powerGen: D(10),
+        maxMiners: D(1),
 
         tempCubeGain: [D(0), D(0),],
     }
 }
-export const globalTemp = defaultTempVars()
+export let globalTemp = defaultTempVars()
 export let globalData = getDefaultObject()
 //saving and loading
 function save(){
@@ -53,7 +54,7 @@ function fixSave(main:any=getDefaultObject(), data:any) {
 function fixOldSaves(){
     //fix important things from old versions
 }
-function exportSave(){
+export function exportSave(){
     save()
     let exportedData = btoa(JSON.stringify(globalData));
     const exportedDataText = document.createElement("textarea");
@@ -64,7 +65,7 @@ function exportSave(){
     document.execCommand("copy");
     document.body.removeChild(exportedDataText);
 }
-function importSave(){
+export function importSave(){
     let importedData = prompt("Paste your save globalData here!")
     // @ts-ignore
     globalData = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
@@ -78,12 +79,13 @@ window.onload = function (){
     load()
 }
 //full reset
-function fullReset(){
+export function fullReset(){
     exportSave()
-    window.localStorage.removeItem('hypercubeSave')
-    location.reload()
+    deleteSave()
+    globalData = getDefaultObject()
+    globalTemp = defaultTempVars()
 }
-function deleteSave(){
+export function deleteSave(){
     window.localStorage.removeItem('hypercubeSave')
     location.reload()
 }

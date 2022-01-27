@@ -1,5 +1,6 @@
 import { DOMCacheGetOrSet } from "./Cache"
+import { fullReset } from  "./Data"
 
 export const generateEventHandlers = () => {
-    //DOMCacheGetOrSet("testButton").addEventListener('click', () => ());
+    DOMCacheGetOrSet("fullReset").addEventListener('click', () => fullReset());
 }
