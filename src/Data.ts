@@ -5,9 +5,9 @@ function getDefaultObject() {
     return {
         testerest: D(1),
         //misc
-        time: Date.now(),
-        devSpeed: 1,
-        currentTab: 1,
+        time: <number>Date.now(),
+        devSpeed: <number>1,
+        currentTab: <number>1,
     }
 }
 export let data = getDefaultObject()

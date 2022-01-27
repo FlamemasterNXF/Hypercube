@@ -6,11 +6,17 @@ import { DOMCacheGetOrSet } from "./Cache"
 // region var imports
 import { data } from "./Data";
 // endregion
-export function test(){
-    data.testerest = data.testerest.plus(1)
-    console.log(data.testerest)
+function mainLoop(){
+    let diff:number
+    diff = (Date.now()-data.time)
+    data.time = Date.now()
 }
-
+function switchTab(i:number){
+    data.currentTab = i
+}
+window.setInterval(function(){
+    mainLoop()
+}, 50);
 window.onload = function (){
     generateEventHandlers()
 }
