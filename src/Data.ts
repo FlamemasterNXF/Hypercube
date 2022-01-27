@@ -1,5 +1,5 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
-const D = (x: DecimalSource | undefined) => new Decimal(x)
+export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a data object for saving
 function getDefaultObject() {
     return {
