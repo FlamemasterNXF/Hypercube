@@ -1,18 +1,19 @@
-//import EVERYTHING, yes everything.
 // region func imports
 import { generateEventHandlers } from "./EventListeners";
-import { DOMCacheGetOrSet } from "./Cache"
+import { UpdateHTML } from "./UpdateHTML";
 // endregion
 // region var imports
-import { data } from "./Data";
+import { globalData } from "./Data";
 // endregion
+export type Platonic = null
 function mainLoop(){
     let diff:number
-    diff = (Date.now()-data.time)
-    data.time = Date.now()
+    diff = (Date.now()-globalData.time)
+    globalData.time = Date.now()
+    UpdateHTML()
 }
 function switchTab(i:number){
-    data.currentTab = i
+    globalData.currentTab = i
 }
 window.setInterval(function(){
     mainLoop()
@@ -20,3 +21,4 @@ window.setInterval(function(){
 window.onload = function (){
     generateEventHandlers()
 }
+

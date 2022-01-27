@@ -30,7 +30,7 @@ function regularFormat(num:any, precision:number,) {
     if (num.mag < 0.1 && precision !==0) precision = Math.max(precision, 4)
     return num.toStringWithDecimalPlaces(precision)
 }
-export function format(decimal:any, precision:number = 2) : any {
+export function format(decimal:any, precision:number = 2) : string {
     decimal = new Decimal(decimal)
         if (isNaN(decimal)) return  '[ERROR]: NaN'
         if (decimal.sign < 0) return "-" + format(decimal.neg(), precision)
@@ -55,21 +55,20 @@ export function format(decimal:any, precision:number = 2) : any {
             return format(decimal, precision) + "⁻¹"
 }
 
-function formatWhole(decimal:any) {
+export function formatWhole(decimal:any) {
     decimal = new Decimal(decimal)
     if (decimal.gte(1e9)) return format(decimal, 2)
     if (decimal.lte(0.99) && !decimal.eq(0)) return format(decimal, 2)
     return format(decimal, 0)
 }
 
-/*function formatTime(s:number) {
+export function formatTime(s:number) {
     if (s < 60) return format(s) + "s"
     else if (s < 3600) return formatWhole(Math.floor(s / 60)) + "m " + format(s % 60) + "s"
     else if (s < 86400) return formatWhole(Math.floor(s / 3600)) + "h " + formatWhole(Math.floor(s / 60) % 60) + "m " + format(s % 60) + "s"
     else if (s < 31536000) return formatWhole(Math.floor(s / 86400) % 365) + "d " + formatWhole(Math.floor(s / 3600) % 24) + "h " + formatWhole(Math.floor(s / 60) % 60) + "m " + format(s % 60) + "s"
     else return formatWhole(Math.floor(s / 31536000)) + "y " + formatWhole(Math.floor(s / 86400) % 365) + "d " + formatWhole(Math.floor(s / 3600) % 24) + "h " + formatWhole(Math.floor(s / 60) % 60) + "m " + format(s % 60) + "s"
 }
- */
 
 function toPlaces(x:Decimal, precision:number, maxAccepted:number) {
     x = new Decimal(x)

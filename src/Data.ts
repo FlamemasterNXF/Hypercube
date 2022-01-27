@@ -1,24 +1,37 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
-//create all the variables in a data object for saving
+//create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
-        testerest: D(1),
+        squares: [D(1), D(1)],
+        minerals: [D(0)],
+        miners: [D(0)],
         //misc
         time: <number>Date.now(),
         devSpeed: <number>1,
         currentTab: <number>1,
     }
 }
-export let data = getDefaultObject()
+//this is for variables that aren't saved
+function defaultTempVars() {
+    return {
+        squaresGen: D(0),
+        mineralsGen: D(0),
+        powerGen: D(0),
+
+        tempCubeGain: [D(0), D(0),],
+    }
+}
+export const globalTemp = defaultTempVars()
+export let globalData = getDefaultObject()
 //saving and loading
 function save(){
-    window.localStorage.setItem('hypercubeSave', JSON.stringify(data))
+    window.localStorage.setItem('hypercubeSave', JSON.stringify(globalData))
 }
 function load() {
     // @ts-ignore
     let savedata = JSON.parse(window.localStorage.getItem('hypercubeSave'))
-    if (savedata !== undefined) fixSave(data, savedata)
+    if (savedata !== undefined) fixSave(globalData, savedata)
     fixOldSaves()
 }
 //fix saves
@@ -42,7 +55,7 @@ function fixOldSaves(){
 }
 function exportSave(){
     save()
-    let exportedData = btoa(JSON.stringify(data));
+    let exportedData = btoa(JSON.stringify(globalData));
     const exportedDataText = document.createElement("textarea");
     exportedDataText.value = exportedData;
     document.body.appendChild(exportedDataText);
@@ -52,9 +65,9 @@ function exportSave(){
     document.body.removeChild(exportedDataText);
 }
 function importSave(){
-    let importedData = prompt("Paste your save data here!")
+    let importedData = prompt("Paste your save globalData here!")
     // @ts-ignore
-    data = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
+    globalData = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
     save()
     location.reload()
 }
