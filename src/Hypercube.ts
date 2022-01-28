@@ -1,7 +1,8 @@
 // region func imports
 import { generateEventHandlers } from "./EventListeners";
 import { UpdateHTML } from "./UpdateHTML";
-import { calculateEnergyGain, calculateMinerStuff, calculateSquareGain } from "./Calc";
+import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSquareGain} from "./Calc";
+import {increase} from "./Loops";
 // endregion
 // region var imports
 import { globalData } from "./Data";
@@ -11,12 +12,14 @@ function calcLoop(){
     calculateEnergyGain()
     calculateMinerStuff()
     calculateSquareGain()
+    calculateCompact()
 }
 function mainLoop(){
     let diff:number
-    diff = (Date.now()-globalData.time)
+    diff = (Date.now()-globalData.time)/1000
     globalData.time = Date.now()
     calcLoop()
+    increase(diff)
     UpdateHTML()
 }
 function switchTab(i:number){

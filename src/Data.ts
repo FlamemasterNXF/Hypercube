@@ -3,7 +3,8 @@ export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
-        cubes: [D(2), D(0)],
+        squares: D(2),
+        cubes: [D(0), D(0)],
         minerals: [D(0)],
         miners: [D(1)],
         //misc

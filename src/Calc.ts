@@ -17,3 +17,12 @@ export function calculateMinerStuff(){
 export function calculateSquareGain(){
     temp.squaresGen = temp.mineralsGen.div(10)
 }
+export function calculateCompact(){
+    temp.tempCubeGain[0] = data.squares.div(10)
+    for (let i=1;i<data.cubes.length;i++){
+        temp.tempCubeGain[i] = data.cubes[i-1].div(10^i+1)
+    }
+    for (let i=0;i<data.cubes.length;i++){
+        if (temp.tempCubeGain[i].lt(1)) temp.tempCubeGain[i] = new Decimal(0)
+    }
+}
