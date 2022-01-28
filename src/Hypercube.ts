@@ -26,10 +26,10 @@ function switchTab(i:number){
     globalData.currentTab = i
 }
 window.setInterval(function(){
-    load()
     mainLoop()
 }, 50);
 window.onload = function (){
+    load()
     generateEventHandlers()
 }
 
