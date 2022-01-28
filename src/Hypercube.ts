@@ -16,6 +16,7 @@ function mainLoop(){
     let diff:number
     diff = (Date.now()-globalData.time)
     globalData.time = Date.now()
+    calcLoop()
     UpdateHTML()
 }
 function switchTab(i:number){
