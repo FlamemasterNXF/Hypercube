@@ -5,7 +5,7 @@ import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSqu
 import {increase} from "./Loops";
 // endregion
 // region var imports
-import { globalData } from "./Data";
+import {globalData, load} from "./Data";
 // endregion
 export type Platonic = null
 function calcLoop(){
@@ -26,6 +26,7 @@ function switchTab(i:number){
     globalData.currentTab = i
 }
 window.setInterval(function(){
+    load()
     mainLoop()
 }, 50);
 window.onload = function (){

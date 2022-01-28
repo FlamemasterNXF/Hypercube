@@ -1,4 +1,5 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
+import {Platonic} from "./Hypercube";
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
@@ -30,9 +31,8 @@ export let globalData = getDefaultObject()
 function save(){
     window.localStorage.setItem('hypercubeSave', JSON.stringify(globalData))
 }
-function load() {
-    // @ts-ignore
-    let savedata = JSON.parse(window.localStorage.getItem('hypercubeSave'))
+export function load() {
+    let savedata:string = JSON.parse(window.localStorage.getItem('hypercubeSave') || '{}')
     if (savedata !== undefined) fixSave(globalData, savedata)
     fixOldSaves()
 }
@@ -76,9 +76,6 @@ export function importSave(){
 window.setInterval(function(){
     save()
 }, 10000);
-window.onload = function (){
-    load()
-}
 //full reset
 export function fullReset(){
     exportSave()
