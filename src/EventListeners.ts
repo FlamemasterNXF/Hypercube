@@ -14,4 +14,5 @@ export const generateEventHandlers = () => {
     }
 
     DOMCacheGetOrSet('labNav').addEventListener('click', () => switchTab(2))
+    DOMCacheGetOrSet('mainPageNav').addEventListener('click', () => switchTab(1))
 }

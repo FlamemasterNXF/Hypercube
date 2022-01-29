@@ -33,6 +33,6 @@ window.setInterval(function(){
 window.onload = function (){
     load()
     generateEventHandlers()
-    globalData.currentTab = 1
+    tabChangeHTML(-1,globalData.currentTab)
 }
 

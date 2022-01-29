@@ -24,6 +24,14 @@ export function UpdateHTML(){
     DOMCacheGetOrSet("buyMiner").innerText = `Build a Miner MK1 \nUses 10 Cubes`
 }
 export function tabChangeHTML(oldPage:number, page:number){
-    DOMCacheGetOrSet(`page${oldPage}`).style.display = `none`
-    DOMCacheGetOrSet(`page${page}`).style.display = `flex`
+    if (oldPage===-1){
+        for (let i=1;i<3;i++){
+            DOMCacheGetOrSet(`page${i}`).style.display = `none`
+        }
+        DOMCacheGetOrSet(`page${page}`).style.display = `flex`
+    }
+    else{
+        DOMCacheGetOrSet(`page${oldPage}`).style.display = `none`
+        DOMCacheGetOrSet(`page${page}`).style.display = `flex`
+    }
 }
