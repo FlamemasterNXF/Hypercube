@@ -22,6 +22,7 @@ function defaultTempVars() {
         maxMiners: D(1),
 
         tempCubeGain: [D(0), D(0),],
+        cubeRequirements: [D(0), D(0),]
     }
 }
 export let globalTemp = defaultTempVars()

@@ -12,8 +12,9 @@ export function UpdateHTML(){
 
     DOMCacheGetOrSet("compactButton").innerText = `Compact all of your Squares into ${format(temp.tempCubeGain[0])} Cubes`
 
-    for (let i=0;i<data.cubes.length;i++){
-        DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format((10**(i+1))*((i+1)))} Joules of energy`
+    DOMCacheGetOrSet(`cube${0}`).innerText = `You have ${format(data.cubes[0])} ${cubeNames[0]} \nEach produces ${format((10**(1))*((1)))} Joules of energy \nEach requires ${format(temp.cubeRequirements[0])} Squares`
+    for (let i=1;i<data.cubes.length;i++){
+        DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format((10**(i+1))*((i+1)))} Joules of energy \nEach requires ${format(temp.cubeRequirements[i])} ${cubeNames[i-1]}`
     }
     for (let i=0;i<data.cubes.length;i++){
         DOMCacheGetOrSet(`cubeCompact${i}`).innerText = `Compact your ${cubeNames[i]} into ${format(temp.tempCubeGain[i+1])} ${cubeNames[i+1]}`
