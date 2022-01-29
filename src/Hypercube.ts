@@ -1,8 +1,8 @@
 // region func imports
 import { generateEventHandlers } from "./EventListeners";
-import { UpdateHTML } from "./UpdateHTML";
+import {tabChangeHTML, UpdateHTML} from "./UpdateHTML";
 import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSquareGain} from "./Calc";
-import {increase} from "./Loops";
+import { increase}  from "./Loops";
 // endregion
 // region var imports
 import {globalData, load} from "./Data";
@@ -23,7 +23,9 @@ function mainLoop(){
     UpdateHTML()
 }
 export function switchTab(i:number){
+    let tempOldPage = globalData.currentTab
     globalData.currentTab = i
+    tabChangeHTML(tempOldPage, i)
 }
 window.setInterval(function(){
     mainLoop()

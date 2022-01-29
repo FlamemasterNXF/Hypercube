@@ -13,5 +13,5 @@ export const generateEventHandlers = () => {
         DOMCacheGetOrSet(`cubeCompact${i}`).addEventListener('click', () => compactCubes(i))
     }
 
-    DOMCacheGetOrSet(`labNav`).addEventListener('click', () => switchTab(2))
+    DOMCacheGetOrSet('labNav').addEventListener('click', () => switchTab(2))
 }
