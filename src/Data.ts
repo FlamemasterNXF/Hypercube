@@ -1,5 +1,4 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
-import {Platonic} from "./Hypercube";
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a globalData object for saving
 function getDefaultObject() {

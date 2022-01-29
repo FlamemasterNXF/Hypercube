@@ -1,6 +1,7 @@
 import { DOMCacheGetOrSet } from "./Cache";
 import { format, formatWhole, formatTime } from "./Formatting";
-import { globalData as data, globalTemp as temp } from "./Data";
+import { D, globalData as data, globalTemp as temp } from "./Data";
+import Decimal from "break_eternity.js";
 
 export function UpdateHTML(){
     DOMCacheGetOrSet("squares").innerText = `You are in control of ${format(data.squares)} Squares. [+${format(temp.squaresGen)}/s]`
@@ -11,6 +12,9 @@ export function UpdateHTML(){
 
     for (let i=0;i<data.cubes.length;i++){
         let cubeNames:string[] = ["Cubes","Tesseracts","Penteracts","Hexeracts","Hepteracts","Octeracts","Enneracts","Decagons"]
-        DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format((i+1)*10)} Joules of energy`
+        DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format((10**(i+1))*((i+1)))} Joules of energy`
     }
+
+    DOMCacheGetOrSet("minerTexts").innerText = `You can currently sustain a maximum of ${format(temp.maxMiners)} Miners \nEach Miner requires 150J of energy`
+    DOMCacheGetOrSet("buyMiner").innerText = `Build a Miner MK1 \nUses 10 Cubes`
 }
