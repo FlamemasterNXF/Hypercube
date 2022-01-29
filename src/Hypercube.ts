@@ -1,11 +1,10 @@
-// region func imports
+// region imports
+import { globalData, load } from "./Data";
 import { generateEventHandlers } from "./EventListeners";
 import {tabChangeHTML, UpdateHTML} from "./UpdateHTML";
 import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSquareGain} from "./Calc";
-import { increase}  from "./Loops";
-// endregion
-// region var imports
-import {globalData, load} from "./Data";
+import { increase }  from "./Loops";
+import { initalizeTechs } from "./Lab";
 // endregion
 export type Platonic = null
 function calcLoop(){
@@ -33,6 +32,7 @@ window.setInterval(function(){
 window.onload = function (){
     load()
     generateEventHandlers()
+    initalizeTechs()
     tabChangeHTML(-1,globalData.currentTab)
 }
 

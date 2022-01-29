@@ -23,6 +23,9 @@ export function UpdateHTML(){
     DOMCacheGetOrSet("minerTexts").innerText = `You can currently sustain a maximum of ${format(temp.maxMiners)} Miners \nEach Miner requires 150J of energy`
     DOMCacheGetOrSet("buyMiner").innerText = `Build a Miner MK1 \nUses 10 Cubes`
 }
+export function techDisplayHTML(i:number){
+    DOMCacheGetOrSet("techText").innerText = `${temp.techs[i].name} \n${temp.techs[i].description} \nRequires an Energy production of at least ${format(temp.techs[i].energyReq)}J \n${temp.techs[i].otherReq}`
+}
 export function tabChangeHTML(oldPage:number, page:number){
     if (oldPage===-1){
         for (let i=1;i<3;i++){
