@@ -34,3 +34,13 @@
     background-color: black;
     margin-top: 10px;
 }
+.techRow{
+    margin-top: 30px;
+}
+.tech{
+    width: 80px;
+    height: 70px;
+    background-color: black;
+    border: 2px solid green;
+    color: white;
+}
