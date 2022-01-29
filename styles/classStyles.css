@@ -24,3 +24,12 @@
     background-color: black;
     margin-top: 10px;
 }
+.cubeCompact{
+    color: white;
+    font-family: DosisSemiBold;
+    border: 2px solid darkred;
+    height: 80px;
+    width: 120px;
+    background-color: black;
+    margin-top: 10px;
+}
