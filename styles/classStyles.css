@@ -14,6 +14,7 @@
 }
 .layer{
     position: absolute;
+    z-index: 1;
 }
 .cubeDisplay{
     color: white;
