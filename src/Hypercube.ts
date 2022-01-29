@@ -22,7 +22,7 @@ function mainLoop(){
     increase(diff)
     UpdateHTML()
 }
-function switchTab(i:number){
+export function switchTab(i:number){
     globalData.currentTab = i
 }
 window.setInterval(function(){
@@ -31,5 +31,6 @@ window.setInterval(function(){
 window.onload = function (){
     load()
     generateEventHandlers()
+    globalData.currentTab = 1
 }
 

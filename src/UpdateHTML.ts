@@ -23,3 +23,6 @@ export function UpdateHTML(){
     DOMCacheGetOrSet("minerTexts").innerText = `You can currently sustain a maximum of ${format(temp.maxMiners)} Miners \nEach Miner requires 150J of energy`
     DOMCacheGetOrSet("buyMiner").innerText = `Build a Miner MK1 \nUses 10 Cubes`
 }
+export function tabChangeHTML(){
+
+}
