@@ -4,7 +4,7 @@ export const D = (x: DecimalSource | undefined) => new Decimal(x)
 function getDefaultObject() {
     return {
         squares: D(2),
-        cubes: [D(0), D(0)],
+        cubes: [D(0), D(0),D(0)],
         minerals: [D(0)],
         miners: [D(1)],
         //misc
@@ -21,8 +21,8 @@ function defaultTempVars() {
         powerGen: D(10),
         maxMiners: D(1),
 
-        tempCubeGain: [D(0), D(0),],
-        cubeRequirements: [D(0), D(0),]
+        tempCubeGain: [D(0), D(0),D(0),],
+        cubeRequirements: [D(0), D(0),D(0),],
     }
 }
 export let globalTemp = defaultTempVars()
