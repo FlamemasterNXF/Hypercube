@@ -10,13 +10,13 @@ export function UpdateHTML(){
     DOMCacheGetOrSet("powerGen").innerText = `Your Hypercube generates ${format(temp.powerGen)} Joules of energy/s`
     DOMCacheGetOrSet("mineralGen").innerText = `Your ${format(data.miners[0])} Miners mine ${format(temp.mineralsGen)} Rare Minerals/s, a Square requires 10 Rare Minerals`
 
-    DOMCacheGetOrSet("compactButton").innerText = `Compact all of your Squares into ${format(temp.tempCubeGain[0])} Cubes \nCompact all of your Cubes into ${format(temp.tempCubeGain[1])} Tesseracts`
+    DOMCacheGetOrSet("compactButton").innerText = `Compact all of your Squares into ${format(temp.tempCubeGain[0])} Cubes`
 
     for (let i=0;i<data.cubes.length;i++){
         DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format((10**(i+1))*((i+1)))} Joules of energy`
     }
     for (let i=0;i<data.cubes.length;i++){
-        DOMCacheGetOrSet(`cubeCompact${i}`).innerText = `Compact your ${cubeNames[i]} into ${temp.tempCubeGain[i+1]} ${cubeNames[i+1]}`
+        DOMCacheGetOrSet(`cubeCompact${i}`).innerText = `Compact your ${cubeNames[i]} into ${format(temp.tempCubeGain[i+1])} ${cubeNames[i+1]}`
     }
 
     DOMCacheGetOrSet("minerTexts").innerText = `You can currently sustain a maximum of ${format(temp.maxMiners)} Miners \nEach Miner requires 150J of energy`
