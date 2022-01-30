@@ -2,7 +2,7 @@ import Decimal from "break_eternity.js"
 import { D, globalData as data, globalTemp as temp } from "./Data"
 import {DOMCacheGetOrSet} from "./Cache"
 import {format} from "./Formatting"
-import {techDisplayHTML } from "./UpdateHTML";
+import {techBorderHTML, techDisplayHTML } from "./UpdateHTML";
 
 export class Tech {
     name:string
@@ -34,7 +34,11 @@ export const initializeTechs = () => {
     temp.techs[11] = new Tech('???', 'This Tech is not yet known...', D(0), false,"???")
     temp.techs[12] = new Tech('???', 'This Tech is not yet known...', D(0), false,"???")
 
+    for(let i=0;i<data.hasTech.length;i++){
+        techBorderHTML(i)
+    }
 }
 
 export function buyTech(i:number){
+    techBorderHTML(i)
 }

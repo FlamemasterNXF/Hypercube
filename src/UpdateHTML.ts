@@ -26,6 +26,9 @@ export function UpdateHTML(){
 export function techDisplayHTML(i:number){
     DOMCacheGetOrSet("techText").innerText = `${temp.techs[i].name} \n${temp.techs[i].description} \nRequires an Energy production of at least ${format(temp.techs[i].energyReq)}J \n${temp.techs[i].otherReq}`
 }
+export function techBorderHTML(i:number){
+    DOMCacheGetOrSet(`tech${i}`).style.border = data.hasTech[i]?`2px solid goldenrod`:`2px solid green`
+}
 export function tabChangeHTML(oldPage:number, page:number){
     if (oldPage===-1){
         for (let i=1;i<3;i++){

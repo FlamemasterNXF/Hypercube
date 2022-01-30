@@ -1,7 +1,7 @@
 // region imports
 import { globalData, load } from "./Data";
 import { generateEventHandlers } from "./EventListeners";
-import {tabChangeHTML, UpdateHTML} from "./UpdateHTML";
+import {tabChangeHTML, techBorderHTML, UpdateHTML} from "./UpdateHTML";
 import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSquareGain} from "./Calc";
 import { increase }  from "./Loops";
 import { initializeTechs } from "./Lab";
