@@ -4,7 +4,8 @@ import { generateEventHandlers } from "./EventListeners";
 import {tabChangeHTML, UpdateHTML} from "./UpdateHTML";
 import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSquareGain} from "./Calc";
 import { increase }  from "./Loops";
-import { initalizeTechs } from "./Lab";
+import { initializeTechs } from "./Lab";
+import {createPopup, removePopup} from "./Popup";
 // endregion
 export type Platonic = null
 function calcLoop(){
@@ -32,7 +33,8 @@ window.setInterval(function(){
 window.onload = function (){
     load()
     generateEventHandlers()
-    initalizeTechs()
+    initializeTechs()
     tabChangeHTML(-1,globalData.currentTab)
+    globalData.milestones[0]?removePopup():createPopup(`\nIt is the Year 2096 \n\nYou have been given rights to a small Moon Mining plot to test your new energy production technology.\n\nYou call the technology a 'Hypercube'.\n\nIt produces energy by compacting squares and cubes into higher-dimensional Cube Types and harnessing those higher dimensions for energy production.`)
 }
 

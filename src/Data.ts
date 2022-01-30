@@ -7,8 +7,9 @@ function getDefaultObject() {
         cubes: [D(0), D(0),D(0)],
         minerals: [D(0)],
         miners: [D(1)],
-        hasTech: [false,false,false,false,false,false,false,false,false,false,false,false,false,],
+        hasTech: [true,false,false,false,false,false,false,false,false,false,false,false,false,],
         //misc
+        milestones: <boolean []>[false],
         time: <number>Date.now(),
         devSpeed: <number>1,
         currentTab: <number>1,

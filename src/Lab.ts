@@ -2,23 +2,24 @@ import Decimal from "break_eternity.js"
 import { D, globalData as data, globalTemp as temp } from "./Data"
 import {DOMCacheGetOrSet} from "./Cache"
 import {format} from "./Formatting"
+import {techDisplayHTML } from "./UpdateHTML";
 
 export class Tech {
     name:string
     description:string
     energyReq:Decimal
-    purchaseable:boolean
+    purchasable:boolean
     otherReq:string
 
-    public constructor(name:string,description:string,energyReq:Decimal,purchaseable:boolean,otherReq:string) {
+    public constructor(name:string,description:string,energyReq:Decimal,purchasable:boolean,otherReq:string) {
         this.name = name
         this.description = description
         this.energyReq = energyReq
-        this.purchaseable = purchaseable
+        this.purchasable = purchasable
         this.otherReq = otherReq
     }
 }
-export const initalizeTechs = () => {
+export const initializeTechs = () => {
     temp.techs[0] = new Tech('Init', 'Activate the Miner and Compactor', D(0), false,"World Union Approval Required!")
     temp.techs[1] = new Tech('Better Drills', 'Double Miner Production', D(300), true,"Nothing Special Required")
     temp.techs[2] = new Tech('Low-G Optimization', 'Miner Production is better based on how many Miners you have', D(1000), true,"Nothing Special Required")
@@ -32,4 +33,8 @@ export const initalizeTechs = () => {
     temp.techs[10] = new Tech('Energetic Cores', 'All Cube Types have +1 effective dimensions for energy production purposes (Cubes produce 200 Joules, Tesseracts produce 3000 Joules, etc)', D(1e6), true,"100 Meteorite Shards are required!")
     temp.techs[11] = new Tech('???', 'This Tech is not yet known...', D(0), false,"???")
     temp.techs[12] = new Tech('???', 'This Tech is not yet known...', D(0), false,"???")
+
+}
+
+export function buyTech(i:number){
 }

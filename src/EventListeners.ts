@@ -4,6 +4,7 @@ import {compact, compactCubes} from "./Compact";
 import { buyMiner } from "./Miners";
 import { switchTab } from "./Hypercube";
 import { techDisplayHTML } from "./UpdateHTML";
+import {removePopup} from "./Popup";
 
 export const generateEventHandlers = () => {
     DOMCacheGetOrSet("fullReset").addEventListener('click', () => fullReset());
@@ -20,4 +21,6 @@ export const generateEventHandlers = () => {
     for (let i=0;i<globalData.hasTech.length;i++){
         DOMCacheGetOrSet(`tech${i}`).addEventListener('mouseover', () => techDisplayHTML(i))
     }
+
+    DOMCacheGetOrSet('popup').addEventListener('click', () => removePopup())
 }
