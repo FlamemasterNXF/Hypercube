@@ -40,5 +40,8 @@ export const initializeTechs = () => {
 }
 
 export function buyTech(i:number){
+    if (temp.techs[i].purchasable && temp.powerGen.gte(temp.techs[i].energyReq) && !data.hasTech[i]){
+        data.hasTech[i] = true
+    }
     techBorderHTML(i)
 }
