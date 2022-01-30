@@ -5,6 +5,7 @@ function getDefaultObject() {
     return {
         squares: D(2),
         cubes: [D(0), D(0),D(0)],
+        cubesUnlocked: D(0),
         minerals: [D(0)],
         miners: [D(1)],
         hasTech: [true,false,false,false,false,false,false,false,false,false,false,false,false,],
@@ -26,7 +27,8 @@ function defaultTempVars() {
         tempCubeGain: [D(0), D(0),D(0),],
         cubeRequirements: [D(0), D(0),D(0),],
 
-        techs: <any>[]
+        techs: <any>[],
+        techEffects: <Decimal []>[]
     }
 }
 export let globalTemp = defaultTempVars()

@@ -1,18 +1,23 @@
-// region imports
 import { globalData, load } from "./Data";
 import { generateEventHandlers } from "./EventListeners";
 import {tabChangeHTML, techBorderHTML, UpdateHTML} from "./UpdateHTML";
-import {calculateCompact, calculateEnergyGain, calculateMinerStuff, calculateSquareGain} from "./Calc";
+import {
+    calculateCompact,
+    calculateEnergyGain,
+    calculateMinerStuff,
+    calculateSquareGain,
+    calculateTechEffects
+} from "./Calc";
 import { increase }  from "./Loops";
 import { initializeTechs } from "./Lab";
 import {createPopup, removePopup} from "./Popup";
-// endregion
 export type Platonic = null
 function calcLoop(){
     calculateEnergyGain()
     calculateMinerStuff()
     calculateSquareGain()
     calculateCompact()
+    calculateTechEffects()
 }
 function mainLoop(){
     let diff:number

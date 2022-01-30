@@ -30,3 +30,18 @@ export function calculateCompact(){
         temp.cubeRequirements[i] = D(10**(i+1))
     }
 }
+export function calculateTechEffects(){
+    temp.techEffects[0] = D(1) //NEVER USED, SET AS A FALLBACK CASE FOR IF I ACCIDENTALLY USE IT
+    temp.techEffects[1] = data.hasTech[1]?D(2):D(1)
+    temp.techEffects[2] = data.hasTech[2]?data.miners[0].plus(1).log10().sqrt().plus(1):D(1)
+    temp.techEffects[3] = data.hasTech[3]?D(30):D(1)
+    temp.techEffects[4] = D(1)
+    temp.techEffects[5] = D(1)
+    temp.techEffects[6] = D(1)
+    temp.techEffects[7] = data.hasTech[7]?data.cubesUnlocked:D(0)
+    temp.techEffects[8] = data.hasTech[8]?data.cubesUnlocked.div(10).plus(1):D(1)
+    temp.techEffects[9] = data.hasTech[9]?D(1.1):D(1)
+    temp.techEffects[10] = data.hasTech[9]?D(1):D(0)
+    temp.techEffects[11] = D(1)
+    temp.techEffects[12] = D(1)
+}
