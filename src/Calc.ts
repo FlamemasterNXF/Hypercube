@@ -5,7 +5,7 @@ export function calculateEnergyGain(){
     let contributions:Decimal[]= []
     let total = D(0)
     for(let i=0;i<data.cubes.length;i++){
-        contributions[i] = (data.cubes[i].times((10**(i+1))*((i+1)))).times(temp.techEffects[8])
+        contributions[i] = (data.cubes[i].times(10**(i+2)*(i+1))).times(temp.techEffects[8])
         total = total.plus(contributions[i])
     }
     temp.powerGen = total
