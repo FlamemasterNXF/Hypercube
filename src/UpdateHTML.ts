@@ -20,7 +20,7 @@ export function UpdateHTML(){
         DOMCacheGetOrSet(`cubeCompact${i}`).innerText = `Compact your ${cubeNames[i]} into ${format(temp.tempCubeGain[i+1])} ${cubeNames[i+1]}`
     }
 
-    DOMCacheGetOrSet("minerTexts").innerText = `You can currently have a maximum of ${format(temp.maxMiners)} Miners \nEach Miner requires 150J of energy`
+    DOMCacheGetOrSet("minerTexts").innerText = data.miners[0].lte(temp.maxMiners) && data.cubes[0].gte(10)?`New Miner can be built!`:`Insufficient power or Cubes \nMiners require 150J of power each`
     DOMCacheGetOrSet("buyMiner").innerText = `Build a Miner MK1 \nUses 10 Cubes`
 }
 export function techDisplayHTML(i:number){
