@@ -11,7 +11,7 @@ export function calculateEnergyGain(){
     temp.powerGen = total
 }
 export function calculateMinerStuff(){
-    temp.mineralsGen = ((data.miners[0].times(10)).times(temp.techEffects[1])).times(temp.techEffects[2])
+    temp.mineralsGen = (data.miners[0].times(temp.techEffects[1]).times(temp.techEffects[2])).times(10)
     temp.maxMiners = temp.powerGen.div(D(150).sub(temp.techEffects[3])).floor()
 }
 export function calculateSquareGain(){

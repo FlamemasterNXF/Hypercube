@@ -73,7 +73,7 @@ export function exportSave(){
     document.body.removeChild(exportedDataText);
 }
 export function importSave(){
-    let importedData = prompt("Paste your save globalData here!")
+    let importedData = prompt("Paste your save data here!")
     // @ts-ignore
     globalData = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
     save()
