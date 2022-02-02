@@ -41,7 +41,7 @@ export function calculateTechEffects(){
     temp.techEffects[5] = D(1)
     temp.techEffects[6] = D(1)
     temp.techEffects[7] = data.hasTech[7]?data.cubesUnlocked:D(0)
-    temp.techEffects[8] = data.hasTech[8]?data.cubesUnlocked.div(10).plus(1):D(1)
+    temp.techEffects[8] = data.hasTech[8]?data.miners[0].sqrt().div(10).plus(1):D(1)
     temp.techEffects[9] = data.hasTech[9]?D(1.1):D(1)
     temp.techEffects[10] = data.hasTech[9]?D(1):D(0) //implementation WIP
     temp.techEffects[11] = D(1)
