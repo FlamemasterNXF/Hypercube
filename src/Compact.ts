@@ -9,9 +9,10 @@ export function compact(){
     }
 }
 export function compactCubes(i:number){
-    if (temp.tempCubeGain[i].gte(1)) {
+    if (temp.tempCubeGain[i+1].gte(1)) {
         if (data.cubesUnlocked===D(i-1)) data.cubesUnlocked = D(i)
         data.cubes[i+1] = data.cubes[i+1].plus(temp.tempCubeGain[i+1])
         data.cubes[i] = new Decimal(0)
     }
+    console.log(temp.tempCubeGain[i+1])
 }
