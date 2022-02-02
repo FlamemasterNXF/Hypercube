@@ -2,11 +2,10 @@ import {globalData as data, globalTemp as temp, D} from "./Data";
 import Decimal from "break_eternity.js";
 
 export function compact(){
-    console.log(temp.tempCubeGain[0])
     if (temp.tempCubeGain[0].gte(1)){
         if (data.cubesUnlocked===D(0)) data.cubesUnlocked = D(1)
         data.cubes[0] = data.cubes[0].plus(temp.tempCubeGain[0])
-        data.squares = new Decimal(0)
+        data.squares = D(0)
     }
 }
 export function compactCubes(i:number){

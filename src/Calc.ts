@@ -4,7 +4,9 @@ import Decimal from "break_eternity.js";
 export function calculateEnergyGain(){
     let contributions:Decimal[]= []
     let total = D(0)
-    for(let i=0;i<data.cubes.length;i++){
+    contributions[0] = data.cubes[0].times(10).times(temp.techEffects[8])
+    total = total.plus(contributions[0])
+    for(let i=1;i<data.cubes.length;i++){
         contributions[i] = (data.cubes[i].times(10**(i+2)*(i+1))).times(temp.techEffects[8])
         total = total.plus(contributions[i])
     }
