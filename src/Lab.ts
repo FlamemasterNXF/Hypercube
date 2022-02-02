@@ -44,7 +44,7 @@ export function buyTech(i:number){
         data.hasTech[i] = true
     }
     if (!temp.techs[i].purchasable && temp.powerGen.gte(temp.techs[i].energyReq && !data.hasTech[i])){
-        if(i===(3||9) && data.cubes[2].gte(1)){
+        if(i===3||i===9 && data.cubes[2].gte(1)){
             data.hasTech[i] = true
         }
         console.log(i)
