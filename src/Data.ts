@@ -1,5 +1,6 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
+export const CURRENTVERSION:string = "Tv0.0.1"
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
@@ -14,6 +15,8 @@ function getDefaultObject() {
         time: <number>Date.now(),
         devSpeed: <number>1,
         currentTab: <number>1,
+        createdVer: <string>"NULL",
+        loadedVers: <string[]>[],
     }
 }
 //this is for variables that aren't saved

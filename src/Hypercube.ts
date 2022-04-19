@@ -1,4 +1,4 @@
-import { globalData, load } from "./Data";
+import { globalData, load, CURRENTVERSION } from "./Data";
 import { generateEventHandlers } from "./EventListeners";
 import {tabChangeHTML, techBorderHTML, UpdateHTML} from "./UpdateHTML";
 import {
@@ -32,11 +32,16 @@ export function switchTab(i:number){
     globalData.currentTab = i
     tabChangeHTML(tempOldPage, i)
 }
+function versionCheck(){
+    if(globalData.createdVer === "NULL") globalData.createdVer = CURRENTVERSION
+    if(!globalData.loadedVers.includes(CURRENTVERSION)) globalData.loadedVers.push(CURRENTVERSION)
+}
 window.setInterval(function(){
     mainLoop()
 }, 50);
 window.onload = function (){
     load()
+    versionCheck()
     generateEventHandlers()
     initializeTechs()
     tabChangeHTML(-1,globalData.currentTab)
