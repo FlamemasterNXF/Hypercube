@@ -1,6 +1,6 @@
 //Original .js file from Acamadea
 import Decimal from 'break_eternity.js';
-function exponentialFormat(num:any, precision:number, mantissa:boolean = true) {
+function exponentialFormat(num:any, precision:number, mantissa = true) {
     let e = num.log10().floor()
     let m = num.div(Decimal.pow(10, e))
     if (m.toStringWithDecimalPlaces(precision) === 10) {

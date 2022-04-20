@@ -1,6 +1,6 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
-export const CURRENTVERSION:string = "Tv0.0.1"
+export const CURRENTVERSION = "Tv0.0.1"
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
@@ -12,7 +12,7 @@ function getDefaultObject() {
         hasTech: [true,false,false,false,false,false,false,false,false,false,false,false,false,],
         //misc
         milestones: <boolean []>[false],
-        time: <number>Date.now(),
+        time: Date.now(),
         devSpeed: <number>1,
         currentTab: <number>1,
         createdVer: <string>"NULL",
@@ -30,7 +30,7 @@ function defaultTempVars() {
         tempCubeGain: [D(0), D(0),D(0),],
         cubeRequirements: [D(0), D(0),D(0),],
 
-        techs: <any>[],
+        techs: <any []>[],
         techEffects: <Decimal []>[]
     }
 }
@@ -41,8 +41,8 @@ function save(){
     window.localStorage.setItem('hypercubeSave', JSON.stringify(globalData))
 }
 export function load() {
-    let savedata:string = JSON.parse(window.localStorage.getItem('hypercubeSave') || '{}')
-    if (savedata !== undefined) fixSave(globalData, savedata)
+    const savedata = JSON.parse(window.localStorage.getItem('hypercubeSave') || '{}')
+    fixSave(globalData, savedata)
     fixOldSaves()
 }
 //fix saves
@@ -66,7 +66,7 @@ function fixOldSaves(){
 }
 export function exportSave(){
     save()
-    let exportedData = btoa(JSON.stringify(globalData));
+    const exportedData = btoa(JSON.stringify(globalData));
     const exportedDataText = document.createElement("textarea");
     exportedDataText.value = exportedData;
     document.body.appendChild(exportedDataText);
@@ -76,7 +76,7 @@ export function exportSave(){
     document.body.removeChild(exportedDataText);
 }
 export function importSave(){
-    let importedData = prompt("Paste your save data here!")
+    const importedData = prompt("Paste your save data here!")
     // @ts-ignore
     globalData = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
     save()

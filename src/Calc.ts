@@ -2,7 +2,7 @@ import {globalData as data, globalTemp as temp, D} from "./Data";
 import Decimal from "break_eternity.js";
 
 export function calculateEnergyGain(){
-    let contributions:Decimal[]= []
+    const contributions:Decimal[]= []
     let total = D(0)
     contributions[0] = data.cubes[0].times(10).times(temp.techEffects[8])
     total = total.plus(contributions[0])

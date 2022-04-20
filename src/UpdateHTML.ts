@@ -3,7 +3,7 @@ import { format, formatWhole, formatTime } from "./Formatting";
 import { D, globalData as data, globalTemp as temp } from "./Data";
 import Decimal from "break_eternity.js";
 
-export let cubeNames:string[] = ["Cubes","Tesseracts","Penteracts","Hexeracts","Hepteracts","Octeracts","Enneracts","Decagons"]
+export const cubeNames:string[] = ["Cubes","Tesseracts","Penteracts","Hexeracts","Hepteracts","Octeracts","Enneracts","Decagons"]
 
 export function UpdateHTML(){
     DOMCacheGetOrSet("squares").innerText = `You are in control of ${format(data.squares)} Squares. [+${format(temp.squaresGen)}/s]`

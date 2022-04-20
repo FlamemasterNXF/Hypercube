@@ -8,7 +8,7 @@ export const DOMCacheGetOrSet = (id: string) => {
     const cachedEl = DOMCache.get(id);
     if (cachedEl) return cachedEl;
 
-    const el : any = document.getElementById(id);
-    DOMCache.set(id, el);
-    return el;
+    const el : HTMLElement | null = document.getElementById(id);
+    DOMCache.set(id, el!);
+    return el!;
 }

@@ -20,15 +20,14 @@ function calcLoop(){
     calculateTechEffects()
 }
 function mainLoop(){
-    let diff:number
-    diff = (Date.now()-globalData.time)/1000
+    const diff:number = (Date.now()-globalData.time)/1000
     globalData.time = Date.now()
     calcLoop()
     increase(diff)
     UpdateHTML()
 }
 export function switchTab(i:number){
-    let tempOldPage = globalData.currentTab
+    const tempOldPage = globalData.currentTab
     globalData.currentTab = i
     tabChangeHTML(tempOldPage, i)
 }

@@ -19,6 +19,7 @@ export class Tech {
         this.otherReq = otherReq
     }
 }
+
 export const initializeTechs = () => {
     temp.techs[0] = new Tech('Init', 'Activate the Miner and Compactor', D(0), false,"World Union Approval Required!")
     temp.techs[1] = new Tech('Better Drills', 'Double Miner Production', D(300), true,"Nothing Special Required")

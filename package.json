@@ -5,6 +5,7 @@
     "eventemitter3": "^4.0.7"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
     "husky": "^7.0.4",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "build:esbuild": "npx esbuild src/Hypercube.ts --bundle --minify --sourcemap --target=\"chrome58,firefox57,safari11,edge29\" --outfile=\"./dist/out.js\"",
-    "test": "npx -p typescript tsc",
+    "typecheck": "npx -p typescript tsc",
+    "lint": "npx eslint . --ext .ts",
     "prepare": "husky install"
   }
 }
