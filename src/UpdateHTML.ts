@@ -2,6 +2,7 @@ import { DOMCacheGetOrSet } from "./Cache";
 import { format, formatWhole, formatTime } from "./Formatting";
 import { D, globalData as data, globalTemp as temp } from "./Data";
 import Decimal from "break_eternity.js";
+import {contributions} from "./Calc";
 
 export const cubeNames:string[] = ["Cubes","Tesseracts","Penteracts","Hexeracts","Hepteracts","Octeracts","Enneracts","Decagons"]
 
@@ -12,9 +13,9 @@ export function UpdateHTML(){
 
     DOMCacheGetOrSet("compactButton").innerText = `Compact all of your Squares into ${format(temp.tempCubeGain[0])} Cubes`
 
-    DOMCacheGetOrSet(`cube${0}`).innerText = `You have ${format(data.cubes[0])} ${cubeNames[0]} \nEach produces ${format(D((10**(1))*((1))).times(temp.techEffects[8]))} Joules of energy \nEach requires ${format(temp.cubeRequirements[0])} Squares`
+    DOMCacheGetOrSet(`cube${0}`).innerText = `You have ${format(data.cubes[0])} ${cubeNames[0]} \nEach produces ${format(contributions[0].div(data.cubes[0]))} Joules of energy \nEach requires ${format(temp.cubeRequirements[0])} Squares`
     for (let i=1;i<data.cubes.length;i++){
-        DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format(D((10*i)**(i+2)*(i+1)).times(temp.techEffects[8]))} Joules of energy \nEach requires ${format(temp.cubeRequirements[i])} ${cubeNames[i-1]}`
+        DOMCacheGetOrSet(`cube${i}`).innerText = `You have ${format(data.cubes[i])} ${cubeNames[i]} \nEach produces ${format(contributions[i].div(data.cubes[i]))} Joules of energy \nEach requires ${format(temp.cubeRequirements[i])} ${cubeNames[i-1]}`
     }
     for (let i=0;i<data.cubes.length;i++){
         DOMCacheGetOrSet(`cubeCompact${i}`).innerText = `Compact your ${cubeNames[i]} into ${format(temp.tempCubeGain[i+1])} ${cubeNames[i+1]}`
