@@ -16,8 +16,8 @@ function exponentialFormat(num:any, precision:number, mantissa = true) {
 function commaFormat(num:any, precision:number) {
     if (num === null || num === undefined) return "NaN"
     if (num.mag < 0.001) return (0).toFixed(precision)
-    let init = num.toStringWithDecimalPlaces(precision)
-    let portions = init.split(".")
+    const init = num.toStringWithDecimalPlaces(precision)
+    const portions = init.split(".")
     portions[0] = portions[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
     if (portions.length === 1) return portions[0]
     return portions[0] + "." + portions[1]
@@ -30,13 +30,13 @@ function regularFormat(num:any, precision:number,) {
     if (num.mag < 0.1 && precision !==0) precision = Math.max(precision, 4)
     return num.toStringWithDecimalPlaces(precision)
 }
-export function format(decimal:any, precision:number = 2) : string {
+export function format(decimal:any, precision = 2) : string {
     decimal = new Decimal(decimal)
         if (isNaN(decimal)) return  '[ERROR]: NaN'
         if (decimal.sign < 0) return "-" + format(decimal.neg(), precision)
         if (decimal.mag === Number.POSITIVE_INFINITY) return "Infinity"
         if (decimal.gte("eeee1000")) {
-            let slog = decimal.slog()
+            const slog = decimal.slog()
             if (slog.gte(1e6)) return "F" + format(slog.floor())
             else return Decimal.pow(10, slog.sub(slog.floor())).toStringWithDecimalPlaces(3) + "F" + commaFormat(slog.floor(), 0)
         } else if (decimal.gte("1e1000000")) return exponentialFormat(decimal, 0, false)
@@ -86,7 +86,7 @@ function formatSmall(x:any, precision=2) {
 
 function invertOOM(x:Decimal){
     let e = x.log10().ceil()
-    let m = x.div(Decimal.pow(10, e))
+    const m = x.div(Decimal.pow(10, e))
     e = e.neg()
     x = new Decimal(10).pow(e).times(m)
 

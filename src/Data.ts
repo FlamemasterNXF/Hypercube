@@ -77,8 +77,7 @@ export function exportSave(){
 }
 export function importSave(){
     const importedData = prompt("Paste your save data here!")
-    // @ts-ignore
-    globalData = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
+    globalData = Object.assign(getDefaultObject(), JSON.parse(atob(importedData!)))
     save()
     location.reload()
 }
