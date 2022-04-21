@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf targetdir
           mkdir -p targetdir
-          mv dist index.html styles/ favicon.png targetdir/
+          mv dist index.html styles/ favicon.png Connector.png targetdir/
       - name: Deployy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
