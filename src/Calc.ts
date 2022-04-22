@@ -22,7 +22,7 @@ export function calculateSquareGain(){
 export function calculateCompact(){
     temp.tempCubeGain[0] = data.squares.div(D(10).sub(temp.techEffects[7]))
     for (let i=1;i<data.cubes.length;i++){
-        temp.tempCubeGain[i] = (data.cubes[i-1].div(10**(i+1))).div(temp.techEffects[9])
+        temp.tempCubeGain[i] = (data.cubes[i-1].div(10**(i+1))).times(temp.techEffects[9])
     }
     for (let i=0;i<data.cubes.length;i++){
         if (temp.tempCubeGain[i].lt(1)) temp.tempCubeGain[i] = new Decimal(0)
@@ -34,7 +34,6 @@ export function calculateCompact(){
 }
 export function calculateTechEffects(){
     temp.techEffects[0] = D(1) //NEVER USED, SET AS A FALLBACK CASE FOR IF I ACCIDENTALLY USE IT
-    temp.techEffects[1] = data.hasTech[1]?D(2):D(1)
     temp.techEffects[2] = data.hasTech[2]?data.miners[0].plus(1).log10().sqrt().plus(1):D(1)
     temp.techEffects[3] = data.hasTech[3]?D(30):D(1)
     temp.techEffects[4] = D(1)

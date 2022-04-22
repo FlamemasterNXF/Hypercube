@@ -31,7 +31,7 @@ export const initializeTechs = () => {
     temp.techs[7] = new Tech('Retroactive Compacting', 'Cubes require -1 Square for each Cube Type you have at least 1 of', D(2000), true,"Nothing Special Required")
     temp.techs[8] = new Tech('Retroactive Optimization', 'All Cube Types produce more Energy based on how many Miners you have', D(1e5), true,"Nothing Special Required")
     temp.techs[9] = new Tech('High Dimension Stability', 'Divide the cost of all Cube Types above Cube by 1.1', D(1e7), false,"1 Penteract Required!")
-    temp.techs[10] = new Tech('Energetic Cores', 'All Cube Types have +1 effective dimensions for energy production purposes (Cubes produce 200 Joules, Tesseracts produce 3000 Joules, etc)', D(1e10), false,"100 Meteorite Shards are required!")
+    temp.techs[10] = new Tech('Energetic Cores', 'All Cube Types have +1 effective dimensions for energy production purposes (Cubes produce 200 Joules, Tesseracts produce 3000 Joules, etc)', D(1e10), false,"100 Meteorite Shards required!")
     temp.techs[11] = new Tech('???', 'This Tech is not yet known...', D(0), false,"???")
     temp.techs[12] = new Tech('???', 'This Tech is not yet known...', D(0), false,"???")
 
