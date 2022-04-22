@@ -1,6 +1,6 @@
 import Decimal, { DecimalSource } from 'break_eternity.js';
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
-export const CURRENTVERSION = "Tv0.0.1"
+export const CURRENTVERSION = "Tv0.0.2"
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
