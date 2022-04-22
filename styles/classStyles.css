@@ -19,28 +19,28 @@
 .cubeDisplay{
     color: white;
     font-family: DosisSemiBold;
-    border: 2px solid darkred;
-    height: 100px;
-    width: 250px;
+    border: 0.2rem solid darkred;
+    height: 6.25rem;
+    width: 15.625rem;
     background-color: black;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 .cubeCompact{
     color: white;
     font-family: DosisSemiBold;
-    border: 2px solid darkred;
-    height: 80px;
-    width: 120px;
+    border: 0.2rem solid darkred;
+    height: 5rem;
+    width: 7rem;
     background-color: black;
-    margin-top: 10px;
+    margin-top: 1.667rem;
 }
 .techRow{
-    margin-top: 30px;
+    margin-top: 1rem;
 }
 .tech{
-    width: 95px;
-    height: 80px;
+    width: 6rem;
+    height: 5.5rem;
     background-color: black;
-    border: 2px solid green;
+    border: 0.2rem solid green;
     color: white;
 }
