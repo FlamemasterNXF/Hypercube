@@ -11,7 +11,7 @@ function getDefaultObject() {
         miners: [D(1)],
         hasTech: [true,false,false,false,false,false,false,false,false,false,false,false,false,],
         //misc
-        milestones: <boolean []>[false],
+        milestones: <boolean []>[false, false], /* Beginning, Meteors*/
         time: Date.now(),
         devSpeed: <number>1,
         currentTab: <number>1,
