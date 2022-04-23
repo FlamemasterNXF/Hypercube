@@ -23,7 +23,7 @@
     height: 6.25rem;
     width: 15.625rem;
     background-color: black;
-    margin-top: 1rem;
+    margin-top: 1em;
 }
 .cubeCompact{
     color: white;
@@ -32,10 +32,10 @@
     height: 5rem;
     width: 7rem;
     background-color: black;
-    margin-top: 1.667rem;
+    margin-top: 1.667em;
 }
 .techRow{
-    margin-top: 1rem;
+    margin-top: 1em;
 }
 .tech{
     width: 6rem;
