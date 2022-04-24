@@ -16,3 +16,12 @@ export function milestoneCheck(){
         createPopup(`\nWe need more rare resources.\n\nIt is time to expand our operations outside of this moon.\n\nWe must start mining meteors in the Asteroid Belt.\nI'm sure the World Union won't mind, but we don't have time for their formalities...\n\n[Meteor Tab Unlocked]`)
     }
 }
+
+export function getRandom(min:number, max:number) {
+    return Math.random() * (max - min) + min;
+}
+export function getRandomInt(min:number, max:number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}

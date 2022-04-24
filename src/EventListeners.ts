@@ -6,6 +6,7 @@ import { switchTab } from "./Hypercube";
 import { techDisplayHTML } from "./UpdateHTML";
 import { removePopup } from "./Misc";
 import { buyTech } from "./Lab";
+import {createMeteor} from "./Meteors";
 
 export const generateEventHandlers = () => {
     DOMCacheGetOrSet("fullReset").addEventListener('click', () => fullReset());
@@ -29,4 +30,6 @@ export const generateEventHandlers = () => {
     }
 
     DOMCacheGetOrSet('popup').addEventListener('click', () => removePopup())
+
+    DOMCacheGetOrSet('meteorTemp').addEventListener('click', () => createMeteor())
 }

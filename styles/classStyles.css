@@ -44,9 +44,9 @@
     border: 0.2rem solid green;
     color: white;
 }
-.mapCircle {
+.meteor {
     height: 1.562rem;
-    width: 1.562rem;
+    width: 2rem;
     background-color: #bbb;
     border-radius: 50%;
 }

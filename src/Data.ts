@@ -31,7 +31,9 @@ function defaultTempVars() {
         cubeRequirements: [D(0), D(0),D(0),],
 
         techs: <any []>[],
-        techEffects: <Decimal []>[]
+        techEffects: <Decimal []>[],
+
+        meteors: 0,
     }
 }
 export let globalTemp = defaultTempVars()
