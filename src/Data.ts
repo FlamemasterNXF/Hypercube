@@ -10,8 +10,10 @@ function getDefaultObject() {
         minerals: [D(0)],
         miners: [D(1)],
         hasTech: [true,false,false,false,false,false,false,false,false,false,false,false,false,],
+        //meteors
+        meteors: [0, 0, 0], /* gen'd, probed, mined */
         //misc
-        milestones: <boolean []>[false, false], /* Beginning, Meteors*/
+        milestones: <boolean []>[false, false], /* Beginning, Meteors */
         time: Date.now(),
         devSpeed: <number>1,
         currentTab: <number>1,
@@ -32,8 +34,6 @@ function defaultTempVars() {
 
         techs: <any []>[],
         techEffects: <Decimal []>[],
-
-        meteors: 0,
     }
 }
 export let globalTemp = defaultTempVars()
