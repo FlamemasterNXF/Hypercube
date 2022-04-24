@@ -10,7 +10,7 @@ import {
 } from "./Calc";
 import { increase }  from "./Loops";
 import { initializeTechs } from "./Lab";
-import {createPopup, removePopup} from "./Popup";
+import {createPopup, milestoneCheck, removePopup} from "./Misc";
 export type Platonic = null
 function calcLoop(){
     calculateEnergyGain()
@@ -25,6 +25,7 @@ function mainLoop(){
     calcLoop()
     increase(diff)
     UpdateHTML()
+    milestoneCheck()
 }
 export function switchTab(i:number){
     const tempOldPage = globalData.currentTab
@@ -44,6 +45,6 @@ window.onload = function (){
     generateEventHandlers()
     initializeTechs()
     tabChangeHTML(-1,globalData.currentTab)
-    globalData.milestones[0]?removePopup():createPopup(`\nIt is the Year 2096 \n\nYou have been given rights to a small Moon Mining plot to test your new energy production technology.\n\nYou call the technology a 'Hypercube'.\n\nIt produces energy by compacting squares and cubes into higher-dimensional Cube Types and harnessing those higher dimensions for energy production.`)
+    globalData.milestones[0]?removePopup():createPopup(`It is the Year 2096 \n\nYou have been given rights to a small Moon Mining plot to test your new energy production technology.\n\nYou call the technology a 'Hypercube'.\n\nIt produces energy by compacting squares and cubes into higher-dimensional Cube Types and harnessing those higher dimensions for energy production.`)
 }
 
