@@ -6,7 +6,7 @@ export function createPopup(message:string){
     DOMCacheGetOrSet('popup').innerText = `${message}`
 }
 export function removePopup(){
-    DOMCacheGetOrSet('popup').style.display = `hidden`
+    DOMCacheGetOrSet('popup').style.display = `none`
 }
 
 export function milestoneCheck(){

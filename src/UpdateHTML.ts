@@ -23,6 +23,8 @@ export function UpdateHTML(){
 
     DOM("minerTexts").innerText = data.miners[0].lte(temp.maxMiners) && data.cubes[0].gte(10)?`New Miner can be built!`:`Insufficient power or Cubes \nMiners require 150J of power each`
     DOM("buyMiner").innerText = `Build a Miner MK1 \nUses 10 Cubes`
+
+    DOM('meteorNav').style.display = data.milestones[1]?'block':'none'
 }
 export function techDisplayHTML(i:number){
     DOM("techText").innerText = `${temp.techs[i].name} \n${temp.techs[i].description} \nRequires an Energy production of at least ${format(temp.techs[i].energyReq)}J \n${temp.techs[i].otherReq}`
