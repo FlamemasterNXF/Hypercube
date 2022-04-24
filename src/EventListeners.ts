@@ -18,8 +18,10 @@ export const generateEventHandlers = () => {
         DOMCacheGetOrSet(`cubeCompact${i}`).addEventListener('click', () => compactCubes(i))
     }
 
-    DOMCacheGetOrSet('labNav').addEventListener('click', () => switchTab(2))
     DOMCacheGetOrSet('mainPageNav').addEventListener('click', () => switchTab(1))
+    DOMCacheGetOrSet('mainPageNav2').addEventListener('click', () => switchTab(1))
+    DOMCacheGetOrSet('labNav').addEventListener('click', () => switchTab(2))
+    DOMCacheGetOrSet('meteorNav').addEventListener('click', () => switchTab(3))
 
     for (let i=0;i<globalData.hasTech.length;i++){
         DOMCacheGetOrSet(`tech${i}`).addEventListener('mouseover', () => techDisplayHTML(i))

@@ -34,7 +34,7 @@ export function techBorderHTML(i:number){
 }
 export function tabChangeHTML(oldPage:number, page:number){
     if (oldPage===-1){
-        for (let i=1;i<3;i++){
+        for (let i=1;i<4;i++){
             DOM(`page${i}`).style.display = `none`
         }
         DOM(`page${page}`).style.display = `flex`
