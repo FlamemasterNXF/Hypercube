@@ -32,6 +32,10 @@ export function techDisplayHTML(i:number){
 export function techBorderHTML(i:number){
     DOM(`tech${i}`).style.border = data.hasTech[i]?`2px solid goldenrod`:`2px solid green`
 }
+export function asteroidButtonHTML(i:number){
+    DOM("probeButton").innerText = `Probe Asteroid_${i}`
+    DOM("mineAsteroidButton").innerText = `Mine Asteroid_${i}`
+}
 export function tabChangeHTML(oldPage:number, page:number){
     if (oldPage===-1){
         for (let i=1;i<4;i++){

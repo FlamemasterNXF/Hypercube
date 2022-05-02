@@ -11,7 +11,7 @@ import {
 import { increase }  from "./Loops";
 import { initializeTechs } from "./Lab";
 import {createPopup, milestoneCheck, removePopup} from "./Misc";
-import {createMeteors} from "./Meteors";
+import {createMeteorListeners, createMeteors} from "./Meteors";
 export type Platonic = null
 function calcLoop(){
     calculateEnergyGain()
@@ -46,6 +46,7 @@ window.onload = function (){
     generateEventHandlers()
     initializeTechs()
     createMeteors(20)
+    createMeteorListeners()
     tabChangeHTML(-1,globalData.currentTab)
     globalData.milestones[0]?removePopup():createPopup(`It is the Year 2096 \n\nYou have been given rights to a small Moon Mining plot to test your new energy production technology.\n\nYou call the technology a 'Hypercube'.\n\nIt produces energy by compacting squares and cubes into higher-dimensional Cube Types and harnessing those higher dimensions for energy production.`)
 }

@@ -50,3 +50,11 @@
     background-color: #bbb;
     border-radius: 50%;
 }
+.asteroidControl{
+    height: 2rem;
+    width: 10rem;
+    border: 2px solid gray;
+    background-color: black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

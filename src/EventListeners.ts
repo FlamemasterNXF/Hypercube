@@ -1,9 +1,9 @@
 import { DOMCacheGetOrSet } from "./Cache"
-import {exportSave, fullReset, globalData, importSave} from "./Data"
+import {exportSave, fullReset, globalData, globalTemp, importSave} from "./Data"
 import {compact, compactCubes} from "./Compact";
 import { buyMiner } from "./Miners";
 import { switchTab } from "./Hypercube";
-import { techDisplayHTML } from "./UpdateHTML";
+import {asteroidButtonHTML, techDisplayHTML} from "./UpdateHTML";
 import { removePopup } from "./Misc";
 import { buyTech } from "./Lab";
 
